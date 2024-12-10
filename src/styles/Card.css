@@ -1,0 +1,28 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 12px; /* Roundesd corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #ffffff; /* White background */
+    max-width: 500px; /* Restrict maximum width */
+    margin: 1rem;
+    text-align: center;
+    border: 1px solid gray;
+  }
+
+  .card-image {
+    border-radius: 12px; /* Rounded corners for the image */
+    object-fit: cover; /* Ensure the image fits well */
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .card-caption {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #555555; /* Subtle gray color */
+    font-weight: 500;
+  }
