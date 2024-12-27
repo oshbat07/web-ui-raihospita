@@ -1,10 +1,10 @@
 // src/components/Hero.js
 import React, { useState } from "react";
 import "../styles/Hero.css";
-import Modal from "./Modal";
+import EnquiryModal from "../utils/EnquiryModal";
+import IconComponent from "../utils/IconComponent";
 
 const Hero = () => {
-  
   const [isModalOpen, setModalOpen] = useState(false);
 
   const handleModalOpen = () => {
@@ -25,10 +25,13 @@ const Hero = () => {
         <p className="hero-subtitle">
           Committed to Providing the Best Healthcare Services
         </p>
-        <a href="#contact" className="hero-cta" onClick={handleModalOpen}>
-          Place Enquiry
-        </a>
-        <Modal
+        <div className="hero-cta">
+        <button className="schedule-button" onClick={handleModalOpen}> 
+          <IconComponent iconName={'faCalendarDays'} /> 
+          Schedule an Appointment
+          </button>
+          </div>
+        <EnquiryModal
           isOpen={isModalOpen}
           onClose={handleModalClose}
           onSubmit={handleFormSubmit}

@@ -1,0 +1,90 @@
+/* Modal Backdrop */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  max-width: 90%; /* Ensures modal doesn't exceed 90% of viewport width */
+  max-height: 90%; /* Ensures modal doesn't exceed 90% of viewport height */
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Modal Image */
+.modal-image {
+  width: auto;
+  height: auto;
+  max-width: 100%; /* Constrain image to modal's width */
+  max-height: 100%; /* Constrain image to modal's height */
+  border-radius: 10px;
+  object-fit: contain; /* Ensures the image fits within the modal without distortion */
+}
+
+/* Close Button */
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #333;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #ff0000;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Small Screens */
+@media (max-width: 768px) {
+  .modal-content {
+    max-width: 95%; /* Slightly larger modal for smaller screens */
+    max-height: 85%;
+  }
+
+  .modal-close {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 95%;
+    max-height: 80%;
+  }
+
+  .modal-close {
+    font-size: 1rem;
+  }
+}

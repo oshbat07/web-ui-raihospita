@@ -1,6 +1,6 @@
 .home {
     font-family: 'Roboto', sans-serif;
-    background-color: #f9f9f9;
+    background: linear-gradient(to bottom right, #003973, #1c1c1c);
     margin: 0;
     padding: 0;
     display: flex;

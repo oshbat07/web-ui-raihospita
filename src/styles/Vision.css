@@ -1,0 +1,65 @@
+/* Container for Vision Cards */
+.vision-card-container {
+    display: flex;
+    gap: 2rem;
+    background: linear-gradient(to bottom right, #003973, #1c1c1c);
+    justify-content: center;
+    align-items: stretch;
+    padding: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Individual Vision Card */
+  .vision-card {
+    background-color: #0370ac;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Vision Card Hover Effect */
+  .vision-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Icons */
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .icon i {
+    color: #ff9900;
+  }
+  
+  /* Heading */
+  .vision-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Text */
+  .vision-card p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #d0d8df;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .vision-card-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .vision-card {
+      max-width: 100%;
+    }
+  }
+  

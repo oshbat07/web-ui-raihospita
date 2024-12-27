@@ -1,0 +1,61 @@
+/* Overall photo Section Styling */
+.photo {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    padding: 3rem 1rem;
+    background: linear-gradient(to bottom right, #003973, #1c1c1c);
+    color: #ffffff;
+    min-height: 100vh;
+  }
+  /* Disable scrolling when modal is active */
+body.modal-open {
+    overflow: hidden;
+  }
+  
+  /* Heading Styling */
+  .photo h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); /* Subtle shadow for text */
+  }
+  
+  /* Paragraph Styling */
+  .photo p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+  }
+  
+  /* Image Cards Container */
+  .image-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* Space between cards */
+    margin-top: 2rem;
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .photo h1 {
+      font-size: 2.5rem;
+    }
+  
+    .photo p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .photo h1 {
+      font-size: 2rem;
+    }
+  
+    .photo p {
+      font-size: 0.9rem;
+    }
+  }
+  

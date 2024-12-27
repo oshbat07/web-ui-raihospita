@@ -1,0 +1,46 @@
+import {
+    faHeartbeat,
+    faBrain,
+    faBone,
+    faChild,
+    faUserMd,
+    faXRay,
+    faRibbon,
+    faAmbulance,
+    faSyringe,
+    faMaskFace,
+    faStethoscope,
+    faHandDots,
+    faLungs,
+    faLocationDot,
+    faEnvelope,
+    faPhone,
+    faBullseye,
+    faLightbulb,
+    faFileLines,
+    faCalendarDays
+  } from '@fortawesome/free-solid-svg-icons';
+  import '../styles/Services.css';
+
+export const ICONS = {
+    faHeartbeat: faHeartbeat,
+    faBrain: faBrain,
+    faBone:faBone,
+    faChild: faChild,
+    faUserMd: faUserMd,
+    faXRay: faXRay,
+    faRibbon: faRibbon,
+    faAmbulance:faAmbulance,
+    faSyringe: faSyringe,
+    faMaskFace: faMaskFace,
+    faStethoscope: faStethoscope,
+    faHandDots: faHandDots,
+    faLungs: faLungs,
+    faLocationDot: faLocationDot,
+    faEnvelope: faEnvelope,
+    faPhone: faPhone,
+    faBullseye: faBullseye,
+    faLightbulb: faLightbulb,
+    faFileLines:faFileLines,
+    faCalendarDays: faCalendarDays
+}

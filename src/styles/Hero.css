@@ -1,85 +1,98 @@
 /* src/components/Hero.css */
 .hero {
-    position: relative;
-    width: 100%;
-    height: 80vh;
-    background-image: url('../assets/hospital-building-image.jpg'); /* Placeholder image */
-    background-size: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    padding: 0 20px;
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  background-image: url("../assets/hospital-building-image.jpg"); /* Placeholder image */
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
 .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    width: 100%;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ z-index: 2;
+  max-width: 800px;
+  width: 100%;
 }
 
 .hero-title {
-    font-size: 3rem;
-    margin: 0;
+  font-size: 3rem;
+  margin: 0;
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    margin: 10px 0;
+  font-size: 1.5rem;
+  margin: 10px 0;
 }
 
-.hero-cta {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: #007bff; /* Brand color */
-    border-radius: 8px;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.schedule-button {
+  display: flex;
+  background-color: #09a337;
+  max-width: fit-content;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: none;
+  font-size: 16px;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
 }
-
-.hero-cta:hover {
-     background-color: #0056b3;
+.schedule-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
 }
-
+.schedule-button svg {
+  font-size: 20px; /* Adjust icon size */
+}
 /* Responsive styles */
 @media (max-width: 768px) {
-    .hero {
-        height: 60vh; /* Adjusted height for smaller screens */
-    }
+  .hero {
+    height: 60vh; /* Adjusted height for smaller screens */
+  }
 
-    .hero-title {
-        font-size: 2.5rem;
-    }
+  .hero-title {
+    font-size: 2rem;
+  }
 
-    .hero-subtitle {
-        font-size: 1.2rem;
-    }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .schedule-button {
+    font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 10px 15px;
+  }
+  .schedule-button svg {
+    font-size: 18px; /* Adjust icon size for smaller screens */
+  }
 }
 
 @media (max-width: 480px) {
-    .hero-title {
-        font-size: 2rem;
-    }
+  .hero-title {
+    font-size: 1rem;
+  }
 
-    .hero-subtitle {
-        font-size: 1rem;
-    }
+  .hero-subtitle {
+    font-size: 0.7rem;
+  }
 }

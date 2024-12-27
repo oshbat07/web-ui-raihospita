@@ -1,0 +1,17 @@
+.contact-container {
+  background: linear-gradient(to bottom right, #003973, #1c1c1c);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.contact-card {
+  display: flex;
+  gap: 2rem;
+  background: linear-gradient(to bottom right, #003973, #1c1c1c);
+  justify-content: center;
+  align-items: stretch;
+  padding: 2rem;
+  flex-wrap: wrap;
+}

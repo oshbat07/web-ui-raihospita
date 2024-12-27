@@ -1,0 +1,39 @@
+.generic-card {
+    background-color: #0370ac;
+    color: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex: 1 1 300px;
+    max-width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .generic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: green;
+  }
+  .icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .generic-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  .generic-card p {
+    font-size: 1.3rem;
+    line-height: 1.5;
+    color: #d0d8df;
+  }
+  @media (max-width: 768px) {
+    .generic-card-container {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .generic-card {
+      max-width: 100%;
+    }
+  }
