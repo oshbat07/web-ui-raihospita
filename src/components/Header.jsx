@@ -1,5 +1,5 @@
 // src/components/Header.js
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import "../styles/Header.css";
 import { Link } from "react-router-dom";
