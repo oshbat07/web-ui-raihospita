@@ -1,6 +1,7 @@
 /* src/styles/Header.css */
 .header {
-  background: linear-gradient(to bottom right, #deeeff, #91a1fa);
+  /* background: linear-gradient(to bottom right, #deeeff, #91a1fa); */
+  background-color: #fafafb;
   height: 30%;
   color: rgb(3, 0, 0);
   padding: 0.5rem 0; /* Reduced padding */
