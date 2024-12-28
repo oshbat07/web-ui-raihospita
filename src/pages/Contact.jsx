@@ -1,15 +1,15 @@
 import React from 'react'
-import Header from '../components/Header'
+import GenericCard from '../components/GenericCard'
+import '../styles/Contact.css'
 
 export default function Contact() {
-  return (<>
-    <Header />
-    <div>
-      <h1>Contact Us</h1>
-      <p>If you have any questions or need assistance, please feel free to reach out to us.</p>
-      <p>Email: info@hospital.com</p>
-      <p>Phone: (123) 456-7890</p>
+  return (
+    <div class='contact-container'>
+      <div class='contact-card'>
+        <GenericCard icon={'faLocationDot'} header={'Address'} description={'116, Gurunanakpura, near Capital Petrol Pump, Rasien Road, Bhopal, 462023'} />
+        <GenericCard icon={'faPhone'} header={'Phone'} description={'+917509642432'} />
+        <GenericCard icon={'faEnvelope'} header={'Email'} description={'info@raihospital.com'} />
+      </div>
     </div>
-    </>
   )
 }

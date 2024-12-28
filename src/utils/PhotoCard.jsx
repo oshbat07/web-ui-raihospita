@@ -1,9 +1,9 @@
 import React from 'react'
 import '../styles/Card.css'
 
-export default function Card({ src, width, height, alt, caption }) {
+export default function PhotoCard({ src, width, height, alt, caption, onClick }) {
   return (
-    <div className='card'>
+    <div className='card' onClick={onClick}>
       <img
         className="card-image"
         src={src}

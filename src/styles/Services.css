@@ -1,6 +1,6 @@
 /* Services Section */
 .services-section {
-  padding: 2rem;
+  /* padding: 1rem; */
   width: 100%;
   background: linear-gradient(to bottom right, #003973, #1c1c1c);
   color: #fff; 
@@ -8,8 +8,9 @@
 }
 
 .services-section h2 {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 1.5rem;
+  margin-top: 0%;
   color: #fff; /* Ensure heading is readable */
 }
 
