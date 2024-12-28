@@ -14,15 +14,16 @@
 
 /* Modal Container */
 .modal-container {
-  background: linear-gradient(to bottom right, #deeeff, #91a1fa);
+  /* background: linear-gradient(to bottom right, #deeeff, #91a1fa); */
+  background-color: white;
   border-radius: 10px;
   width: 90%;
   max-width: 400px;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  position: relative;
+  position:relative;
+  top: 5%
 }
-
 /* Close Button */
 .close-btn {
   position: absolute;
@@ -36,7 +37,7 @@
 /* Heading */
 .modal-container h2 {
   text-align: center;
-  color: #4e6a79;
+  color: #030303;
   margin-bottom: 20px;
 }
 
@@ -45,24 +46,25 @@
   display: block;
   margin-bottom: 5px;
   font-size: 14px;
-  color: #555;
+  color: #050505;
 }
 
 /* Input Fields */
 .modal-container input,
 .modal-container select,
 .modal-container textarea {
-  width: 100%;
+  width: 70%;
+  min-height: 2rem;
   padding: 2px;
   margin-bottom: 15px;
-  border: 1px solid #ddd;
+  border: 1px solid #020202;
   border-radius: 5px;
   font-size: 14px;
 }
 
 /* Submit Button */
 .submit-btn {
-  width: 100%;
+  width: 70%;
   padding: 10px;
   background-color: #09a337;
   color: #fff;
@@ -81,6 +83,8 @@
 @media (max-width: 600px) {
   .modal-container {
     padding: 15px;
+    position: absolute;
+    top: 30%
   }
 
   .modal-container h2 {

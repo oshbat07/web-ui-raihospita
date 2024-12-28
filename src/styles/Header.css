@@ -1,10 +1,23 @@
-/* src/components/Header.css */
+/* src/styles/Header.css */
 .header {
   background: linear-gradient(to bottom right, #deeeff, #91a1fa);
+  height: 30%;
   color: rgb(3, 0, 0);
   padding: 0.5rem 0; /* Reduced padding */
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures header stays on top */
+  transition: background-color 0.3s ease;
 }
 
+.header.scrolled {
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+.logo.scrolled {
+  filter: invert(100%);
+  transform: scale(0.7);
+}
 .header-container {
   display: flex;
   justify-content: space-evenly;
@@ -46,7 +59,7 @@
 
 .nav-item a {
   text-decoration: none;
-  color: #343a40;
+  color: inherit; /* Use current text color */
   font-weight: bold;
 }
 
@@ -70,7 +83,6 @@
   flex-direction: column;
   cursor: pointer;
 }
-
 .bar {
   width: 20px; /* Reduced width */
   height: 3px;
@@ -78,10 +90,13 @@
   margin: 3px 0; /* Reduced margin */
   transition: 0.4s;
 }
-
+.bar .scrolled {
+  background-color: white !important;
+}
 /* Responsive styles */
 @media (max-width: 768px) {
   .header-container {
+    max-height: 15%;
     flex-direction: column;
     text-align: center;
   }
@@ -90,8 +105,11 @@
     text-align: center;
     margin-top: 10px;
     flex-direction: row;
+    transform: scale(0.7);
   }
-
+  .contact-info span {
+    min-width:fit-content;
+  }
   .nav {
     display: none;
   }

@@ -1,0 +1,29 @@
+.btn {
+  display: flex;
+  background-color: #09a337;
+  max-width: fit-content;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: none;
+  font-size: 16px;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+.btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+.btn svg {
+  font-size: 20px; /* Adjust icon size */
+}
+@media (max-width: 768px) {
+    .btn {
+      font-size: 14px; /* Adjust font size for smaller screens */
+      padding: 10px 15px;
+    }
+    .btn svg {
+      font-size: 18px; /* Adjust icon size for smaller screens */
+    }
+  }

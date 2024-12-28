@@ -1,8 +1,7 @@
-// src/components/Hero.js
 import React, { useState } from "react";
 import "../styles/Hero.css";
 import EnquiryModal from "../utils/EnquiryModal";
-import IconComponent from "../utils/IconComponent";
+import Button from "./Button";
 
 const Hero = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -26,11 +25,12 @@ const Hero = () => {
           Committed to Providing the Best Healthcare Services
         </p>
         <div className="hero-cta">
-        <button className="schedule-button" onClick={handleModalOpen}> 
-          <IconComponent iconName={'faCalendarDays'} /> 
-          Schedule an Appointment
-          </button>
-          </div>
+          <Button
+            icon="faCalendarDays"
+            description="Make an Appointment"
+            onClick={handleModalOpen}
+          />
+        </div>
         <EnquiryModal
           isOpen={isModalOpen}
           onClose={handleModalClose}

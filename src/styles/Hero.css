@@ -15,7 +15,6 @@
 }
 
 .hero::before {
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -26,11 +25,11 @@
 }
 
 .hero-content {
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
- z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
   max-width: 800px;
   width: 100%;
 }
@@ -45,26 +44,6 @@
   margin: 10px 0;
 }
 
-.schedule-button {
-  display: flex;
-  background-color: #09a337;
-  max-width: fit-content;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: none;
-  font-size: 16px;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-.schedule-button:hover {
-  background-color: #0056b3; /* Darker blue on hover */
-}
-.schedule-button svg {
-  font-size: 20px; /* Adjust icon size */
-}
 /* Responsive styles */
 @media (max-width: 768px) {
   .hero {
@@ -77,13 +56,6 @@
 
   .hero-subtitle {
     font-size: 1rem;
-  }
-  .schedule-button {
-    font-size: 14px; /* Adjust font size for smaller screens */
-    padding: 10px 15px;
-  }
-  .schedule-button svg {
-    font-size: 18px; /* Adjust icon size for smaller screens */
   }
 }
 

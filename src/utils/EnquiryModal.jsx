@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/EnquiryModal.css";
-import { services } from "../pages/Services";
+import { services } from "../data/serviceData";
 
 const EnquiryModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -98,7 +98,7 @@ const EnquiryModal = ({ isOpen, onClose }) => {
         <span className="close-btn" onClick={onClose}>
           &times;
         </span>
-        <h2>Enquiry Form</h2>
+        <h2>Book an Appointment</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
           <input
@@ -113,7 +113,8 @@ const EnquiryModal = ({ isOpen, onClose }) => {
           {errors.name && <span className="error">{errors.name}</span>}
 
           <label htmlFor="phone">Phone:</label>
-          <input
+          <input 
+            className='modal-input'
             type="tel"
             id="phone"
             name="phone"
