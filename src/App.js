@@ -7,14 +7,16 @@ import Services from './pages/Services';
 import Photos from './pages/Photos';
 import Vision from './pages/Vision';
 import Header from './components/Header';
+import { useState } from 'react';
 
 function App() {
+  const [isModalOpen, setModalOpen] = useState(false);
   return (
     <Router>
       <div>
-        <Header />
+        <Header isModalOpen={isModalOpen} setModalOpen={setModalOpen} />
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route path="/" exact element={<Home isModalOpen={isModalOpen} setModalOpen={setModalOpen} />} />
           <Route path="/photos" element={<Photos />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />

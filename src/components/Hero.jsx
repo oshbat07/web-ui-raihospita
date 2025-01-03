@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Hero.css";
-import EnquiryModal from "../utils/EnquiryModal";
-import Button from "./Button";
+// import EnquiryModal from "../utils/EnquiryModal";
+// import Button from "./Button";
 
-const Hero = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+const Hero = ({isModalOpen, setModalOpen}) => {
 
-  const handleModalOpen = () => {
-    setModalOpen(true);
-  };
-  const handleModalClose = () => {
-    setModalOpen(false);
-  };
-  const handleFormSubmit = (formData) => {
-    console.log("Form Submitted:", formData);
-    alert("Form Submitted!");
-  };
+  //  const handleModalOpen = () => {
+  //   setModalOpen(true);
+  // };
+  // const handleModalClose = () => {
+  //   setModalOpen(false);
+  // };
+  // const handleFormSubmit = (formData) => {
+  //   console.log("Form Submitted:", formData);
+  //   alert("Form Submitted!");
+  // };
 
   return (
     <section className="hero">
@@ -24,18 +23,18 @@ const Hero = () => {
         <p className="hero-subtitle">
           Committed to Providing the Best Healthcare Services
         </p>
-        <div className="hero-cta">
+        {/* <div className="hero-cta">
           <Button
             icon="faCalendarDays"
             description="Make an Appointment"
             onClick={handleModalOpen}
           />
-        </div>
-        <EnquiryModal
+        </div> */}
+        {/* <EnquiryModal
           isOpen={isModalOpen}
           onClose={handleModalClose}
           onSubmit={handleFormSubmit}
-        />
+        /> */}
       </div>
     </section>
   );
