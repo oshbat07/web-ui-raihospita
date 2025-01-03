@@ -98,7 +98,7 @@ const EnquiryModal = ({ isOpen, onClose }) => {
         <span className="close-btn" onClick={onClose}>
           &times;
         </span>
-        <h2>Book an Appointment</h2>
+        <h2>Make an Appointment</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name:</label>
           <input
