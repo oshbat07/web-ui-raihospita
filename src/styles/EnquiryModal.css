@@ -88,9 +88,10 @@
 /* Responsive Design */
 @media (max-width: 600px) {
   .modal-container {
-    padding: 15px;
+    padding: 5px;
     position: absolute;
-    top: 30%
+    top: 10%;
+    height: 70%;
   }
 
   .modal-container h2 {
