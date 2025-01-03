@@ -99,6 +99,7 @@
     max-height: 15%;
     flex-direction: column;
     text-align: center;
+    margin: 10px;
   }
 
   .contact-info {
@@ -128,5 +129,6 @@
 
   .burger-menu {
     display: flex;
+    margin-bottom: 1rem;
   }
 }
