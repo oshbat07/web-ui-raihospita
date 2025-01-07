@@ -12,10 +12,10 @@ const Footer = () => {
         <div className="footer-right">
           <ul className="quick-links">
             <li><a href="/vision">Our Vision</a></li>
+             <li><a href="/photos">Photo Gallery</a></li>
             <li><a href="/services">Services</a></li>
             <li><a href="/contact">Contact</a></li>
-            {/* <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms-of-use">Terms of Use</a></li> */}
+            {/* <li><a href="/terms-of-use">Terms of Use</a></li>  */}
           </ul>
         </div>
       </div>

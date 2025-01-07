@@ -1,42 +1,41 @@
 import React from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "../styles/Hero.css";
-// import EnquiryModal from "../utils/EnquiryModal";
-// import Button from "./Button";
+import { homePagePhotos } from "../data/photosData";
 
-const Hero = ({isModalOpen, setModalOpen}) => {
-
-  //  const handleModalOpen = () => {
-  //   setModalOpen(true);
-  // };
-  // const handleModalClose = () => {
-  //   setModalOpen(false);
-  // };
-  // const handleFormSubmit = (formData) => {
-  //   console.log("Form Submitted:", formData);
-  //   alert("Form Submitted!");
-  // };
+const Hero = ({ isModalOpen, setModalOpen }) => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true,
+    autoplay: true,
+    Speed: 2000,
+  };
 
   return (
-    <section className="hero">
-      <div className="hero-content">
-        <h1 className="hero-title">Welcome to Our Hospital</h1>
-        <p className="hero-subtitle">
-          Committed to Providing the Best Healthcare Services
-        </p>
-        {/* <div className="hero-cta">
-          <Button
-            icon="faCalendarDays"
-            description="Make an Appointment"
-            onClick={handleModalOpen}
-          />
-        </div> */}
-        {/* <EnquiryModal
-          isOpen={isModalOpen}
-          onClose={handleModalClose}
-          onSubmit={handleFormSubmit}
-        /> */}
-      </div>
-    </section>
+    <div className="hero">
+      <Slider {...settings}>
+        {homePagePhotos.map((item) => (
+          <div key={item.id}>
+            <img
+              src={item.src}
+              alt={`Slide ${item.id + 1}`}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "10px",
+                objectFit: "cover",
+              }}
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

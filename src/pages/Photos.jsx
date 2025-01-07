@@ -6,15 +6,16 @@ import ImageModal from "../utils/ImageModal";
 
 export default function Photos() {
   const [selectedImage, setSelectedImage] = useState(null);
-
-  const handleCardClick = (image) => {
-    setSelectedImage(image);
-  };
+  // const [isOpen, setIsOpen] = useState(false);
+  // const handleCardClick = (image) => {
+  //   setIsOpen(true);
+  //   setSelectedImage(image);
+  // };
 
   const closeModal = () => {
     setSelectedImage(null);
   };
-  
+
   return (
     <>
       <div className="photo">
@@ -34,14 +35,18 @@ export default function Photos() {
                 width={item.width}
                 height={item.height}
                 caption={item.caption}
-                onClick={() => handleCardClick(item.src)}
+                // onClick={() => handleCardClick(item.src)}
               />
             );
           })}
         </div>
         {selectedImage && (
-        <ImageModal image={selectedImage} onClose={closeModal} />
-      )}
+          <ImageModal
+            image={selectedImage}
+            // isOpen={isOpen}
+            onClose={closeModal}
+          />
+        )}
       </div>
     </>
   );

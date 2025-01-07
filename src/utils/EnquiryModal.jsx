@@ -1,5 +1,15 @@
 import React, { useState } from "react";
-import "../styles/EnquiryModal.css";
+import {
+  Modal,
+  Box,
+  Typography,
+  TextField,
+  MenuItem,
+  Button,
+  Select,
+  FormControl,
+  InputLabel,
+} from "@mui/material";
 import { services } from "../data/serviceData";
 
 const EnquiryModal = ({ isOpen, onClose }) => {
@@ -7,7 +17,6 @@ const EnquiryModal = ({ isOpen, onClose }) => {
     name: "",
     phone: "",
     date: "",
-    // email: "",
     ailment: "",
     description: "",
     time: "",
@@ -21,7 +30,7 @@ const EnquiryModal = ({ isOpen, onClose }) => {
       [name]: value,
     }));
   };
-  // Validation logic
+
   const validate = () => {
     const newErrors = {};
 
@@ -38,15 +47,10 @@ const EnquiryModal = ({ isOpen, onClose }) => {
       newErrors.phone = "Phone number must be exactly 10 digits.";
     }
 
-    // const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    // if (!formData.email.trim()) {
-    //   newErrors.email = "Email is required.";
-    // } else if (!emailPattern.test(formData.email)) {
-    //   newErrors.email = "Invalid email format.";
-    // }
     if (!formData.date) {
       newErrors.date = "Preferred date is required.";
     }
+
     if (!formData.time) {
       newErrors.time = "Preferred time is required.";
     }
@@ -54,30 +58,30 @@ const EnquiryModal = ({ isOpen, onClose }) => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
     if (validate()) {
       console.log("Form Data Submitted:", formData);
       onClose();
+      setFormData({
+        name: "",
+        phone: "",
+        ailment: "",
+        date: "",
+        description: "",
+        time: "",
+      });
     }
-    setFormData({
-      name: "",
-      phone: "",
-      // email: "",
-      ailment: "",
-      date: "",
-      description: "",
-      time: "",
-    })
   };
-  // Generate time options in 30-minute intervals
+
   const generateTimeOptions = () => {
     const times = [];
     let current = new Date();
-    current.setHours(8, 0, 0, 0); // Start time (9:00 AM)
+    current.setHours(8, 0, 0, 0);
     const end = new Date();
-    end.setHours(22, 0, 0, 0); // End time (5:00 PM)
+    end.setHours(22, 0, 0, 0);
 
     while (current <= end) {
       const timeString = current.toLocaleTimeString([], {
@@ -89,113 +93,118 @@ const EnquiryModal = ({ isOpen, onClose }) => {
     }
     return times;
   };
+
   const today = new Date().toISOString().split("T")[0];
-  if (!isOpen) return null;
 
   return (
-    <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-container" onClick={(e) => e.stopPropagation()}>
-        <span className="close-btn" onClick={onClose}>
-          &times;
-        </span>
-        <h2>Make an Appointment</h2>
+    <Modal open={isOpen} onClose={onClose}>
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: 400,
+          bgcolor: "background.paper",
+          boxShadow: 24,
+          p: 4,
+          borderRadius: 5,
+        }}
+      >
+        <Typography variant="h6" component="h2" gutterBottom>
+          Make an Appointment
+        </Typography>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            id="name"
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Name"
             name="name"
             value={formData.name}
             onChange={handleChange}
-            placeholder="Enter your name"
-            required
+            error={!!errors.name}
+            helperText={errors.name}
           />
-          {errors.name && <span className="error">{errors.name}</span>}
 
-          <label htmlFor="phone">Phone:</label>
-          <input 
-            className='modal-input'
-            type="tel"
-            id="phone"
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Phone"
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="Enter your phone number"
-            required
+            error={!!errors.phone}
+            helperText={errors.phone}
           />
-          {errors.phone && <span className="error">{errors.phone}</span>}
 
-          {/* <label htmlFor="email">Email:</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="Enter your email"
-            required
-          />
-          {errors.email && <span className="error">{errors.email}</span>} */}
-
-          <label htmlFor="ailment">Ailment Type:</label>
-          <select
-            id="ailment"
-            name="ailment"
-            value={formData.ailment}
-            onChange={handleChange}
-            required
-          >
-            {services.map((service) => {
-              return (
-                <option key={service.name} value={service.name}>
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="ailment-label">Ailment Type</InputLabel>
+            <Select
+              labelId="ailment-label"
+              name="ailment"
+              value={formData.ailment}
+              onChange={handleChange}
+            >
+              {services.map((service) => (
+                <MenuItem key={service.name} value={service.name}>
                   {service.name}
-                </option>
-              );
-            })}
-          </select>
-          <label htmlFor="date">Preferred Date:</label>
-          <input
-            type="date"
-            id="date"
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Preferred Date"
             name="date"
+            type="date"
+            inputProps= {{min: today}}
             value={formData.date}
             onChange={handleChange}
-            min={today}
-            required
+            error={!!errors.date}
+            helperText={errors.date}
           />
-          {errors.date && <span className="error">{errors.date}</span>}
-          <label htmlFor="time">Preferred Time:</label>
-          <select
-            id="time"
-            name="time"
-            value={formData.time}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select a time</option>
-            {generateTimeOptions().map((time, index) => (
-              <option key={index} value={time}>
-                {time}
-              </option>
-            ))}
-          </select>
-          {errors.time && <span className="error">{errors.time}</span>}
-          <label htmlFor="description">Description:</label>
-          <textarea
-            id="description"
+
+          <FormControl fullWidth margin="normal">
+            <InputLabel id="time-label">Preferred Time</InputLabel>
+            <Select
+              labelId="time-label"
+              name="time"
+              value={formData.time}
+              onChange={handleChange}
+            >
+              {generateTimeOptions().map((time, index) => (
+                <MenuItem key={index} value={time}>
+                  {time}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+
+          <TextField
+            fullWidth
+            margin="normal"
+            label="Description"
             name="description"
-            rows="4"
+            multiline
+            rows={4}
             value={formData.description}
             onChange={handleChange}
-            placeholder="Describe your issue"
-            required
-          ></textarea>
-          <button type="submit" className="submit-btn">
+          />
+
+          <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            type="submit"
+            sx={{ mt: 2 }}
+          >
             Submit
-          </button>
+          </Button>
         </form>
-      </div>
-    </div>
+      </Box>
+    </Modal>
   );
 };
 
