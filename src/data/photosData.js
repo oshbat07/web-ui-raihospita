@@ -36,7 +36,7 @@ export const photosData = [
     alt: "ct-scan image",
     width: "420px",
     height: "270px",
-    caption:"",
+    caption: "",
   },
   {
     id: 5,
@@ -45,7 +45,7 @@ export const photosData = [
     alt: "emergency ward image",
     width: "420px",
     height: "270px",
-    caption:"",
+    caption: "",
   },
   {
     id: 6,
@@ -54,7 +54,7 @@ export const photosData = [
     alt: "icu image",
     width: "420px",
     height: "270px",
-    caption:"",
+    caption: "",
   },
   {
     id: 7,
@@ -63,7 +63,7 @@ export const photosData = [
     alt: "icu image",
     width: "420px",
     height: "270px",
-    caption:"",
+    caption: "",
   },
   {
     id: 8,
@@ -72,7 +72,7 @@ export const photosData = [
     alt: "icu image",
     width: "420px",
     height: "270px",
-    caption:"",
+    caption: "",
   },
   {
     id: 9,
@@ -81,7 +81,7 @@ export const photosData = [
     alt: "ot image",
     width: "420px",
     height: "270px",
-    caption:"",
+    caption: "",
   },
   {
     id: 10,
@@ -90,6 +90,20 @@ export const photosData = [
     alt: "ambulance image",
     width: "420px",
     height: "270px",
-    caption:"",
+    caption: "",
+  },
+];
+export const homePagePhotos = [
+  {
+    id: 1,
+    src: require("../assets/landing1.jpg"),
+  },
+  {
+    id: 2,
+    src: require("../assets/hospital-building-image.jpg"),
+  },
+  {
+    id: 3,
+    src: require("../assets/landing2.png"),
   },
 ];

@@ -3,9 +3,8 @@ import React, { useState } from "react";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import "../styles/Header.css";
 import { Link } from "react-router-dom";
-import Button from "../components/Button";
 import EnquiryModal from "../utils/EnquiryModal";
-
+import AppointmentButton from "../utils/AppointmentButton";
 // import IconComponent from "../utils/IconComponent";
 
 const Header = ({ isModalOpen, setModalOpen }) => {
@@ -74,7 +73,7 @@ const Header = ({ isModalOpen, setModalOpen }) => {
           <div className="bar"></div>
         </div>
         <div>
-          <Button
+          <AppointmentButton
             icon="faCalendarDays"
             description="Make an Appointment"
             isModalOpen={isModalOpen}

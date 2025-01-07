@@ -31,7 +31,7 @@
 .logo {
   display: flex;
   align-items: center;
-  transform: scale(0.7);
+  transform: scale(0.8);
 }
 
 .logo img {
