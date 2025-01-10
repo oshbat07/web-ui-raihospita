@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Modal,
   Box,
@@ -11,6 +11,7 @@ import {
   InputLabel,
 } from "@mui/material";
 import { services } from "../data/serviceData";
+import "../styles/EnquiryModal.css";
 
 const EnquiryModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -94,6 +95,17 @@ const EnquiryModal = ({ isOpen, onClose }) => {
     return times;
   };
 
+useEffect(() => {
+  setFormData({
+    name: "",
+    phone: "",
+    date: "",
+    ailment: "",
+    description: "",
+    time: "",
+  })
+},[isOpen])
+
   const today = new Date().toISOString().split("T")[0];
 
   return (
@@ -104,18 +116,25 @@ const EnquiryModal = ({ isOpen, onClose }) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: '80vw',
+          maxWidth: "400px",
+          width: "70vw",
           bgcolor: "background.paper",
           boxShadow: 24,
           p: 3,
           borderRadius: 2,
         }}
       >
-        <Typography variant="h6" component="h2" gutterBottom sx={{display: 'flex', justifyContent: 'center'}}>
+        <Typography
+          variant="h6"
+          component="h2"
+          gutterBottom
+          sx={{ display: "flex", justifyContent: "center" }}
+        >
           Make an Appointment
         </Typography>
         <form onSubmit={handleSubmit}>
           <TextField
+            className="modal-formField"
             fullWidth
             margin="normal"
             label="Name"
@@ -125,9 +144,9 @@ const EnquiryModal = ({ isOpen, onClose }) => {
             error={!!errors.name}
             helperText={errors.name}
           />
-
           <TextField
             fullWidth
+            className="modal-formField"
             margin="normal"
             label="Phone"
             name="phone"
@@ -136,11 +155,11 @@ const EnquiryModal = ({ isOpen, onClose }) => {
             error={!!errors.phone}
             helperText={errors.phone}
           />
-
           <FormControl fullWidth margin="normal">
             <InputLabel id="ailment-label">Ailment Type</InputLabel>
             <Select
               labelId="ailment-label"
+              className="modal-formField"
               name="ailment"
               value={formData.ailment}
               onChange={handleChange}
@@ -152,25 +171,24 @@ const EnquiryModal = ({ isOpen, onClose }) => {
               ))}
             </Select>
           </FormControl>
-          <FormControl fullWidth margin="normal">
-          <InputLabel id="date-label">Preferred Date</InputLabel>
-          <TextField
-            fullWidth
-            margin="normal"
-            labelId="date-label"
-            name="date"
-            type="date"
-            inputProps= {{min: today}} 
-            value={formData.date}
-            onChange={handleChange}
-            error={!!errors.date}
-            helperText={errors.date}
-          />
-</FormControl>
+            <TextField
+              fullWidth
+              className="modal-formField"
+              margin="normal"
+              labelId="date-label"
+              name="date"
+              type="date"
+              inputProps={{ min: today }}
+              value={formData.date}
+              onChange={handleChange}
+              error={!!errors.date}
+              helperText={errors.date}
+            />
           <FormControl fullWidth margin="normal">
             <InputLabel id="time-label">Preferred Time</InputLabel>
             <Select
               labelId="time-label"
+              className="modal-formField"
               name="time"
               value={formData.time}
               onChange={handleChange}
@@ -182,18 +200,16 @@ const EnquiryModal = ({ isOpen, onClose }) => {
               ))}
             </Select>
           </FormControl>
-
           <TextField
             fullWidth
+            className="modal-formField"
             margin="normal"
             label="Description"
             name="description"
-            multiline
-            rows={4}
+            rows={1}
             value={formData.description}
             onChange={handleChange}
           />
-
           <Button
             fullWidth
             variant="contained"
