@@ -7,14 +7,17 @@ import { homePagePhotos } from "../data/photosData";
 
 const Hero = ({ isModalOpen, setModalOpen }) => {
   const settings = {
-    dots: true,
+    accessibility: true,
+    adaptiveHeight: true,
+    dots: false,
     infinite: true,
-    speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     autoplay: true,
-    Speed: 2000,
+    speed: 4000,
+    fade: true,
+    pauseOnHover: true
   };
 
   return (

@@ -4,11 +4,9 @@
   margin-top: 10px;
   margin: 0.2rem;
 }
-.hero-slider {
-  border: 2px solid red;
-}
+
 .hero-why {
-  width: 100%;
+  width: auto;
   height:  auto;
   color: rgb(5, 0, 0);
   background-color: #fafafb;
@@ -16,5 +14,7 @@
 }
 
 @media (max-width: 768px) {
-
+  .hero-slider {
+    min-height: auto;
+  }
 }
