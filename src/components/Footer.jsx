@@ -6,8 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-left">
-          <p>&copy; 2024 Rai Hospital. All Rights Reserved.</p>
-          <p>Trademark of Your Hospital</p>
+          <p>&copy; 2024 Rai Hospital & Research Center. All Rights Reserved.</p>
         </div>
         <div className="footer-right">
           <ul className="quick-links">
@@ -15,7 +14,6 @@ const Footer = () => {
              <li><a href="/photos">Photo Gallery</a></li>
             <li><a href="/services">Services</a></li>
             <li><a href="/contact">Contact</a></li>
-            {/* <li><a href="/terms-of-use">Terms of Use</a></li>  */}
           </ul>
         </div>
       </div>

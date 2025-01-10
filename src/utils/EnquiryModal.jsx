@@ -156,7 +156,7 @@ const EnquiryModal = ({ isOpen, onClose }) => {
           <TextField
             fullWidth
             margin="normal"
-            label="Preferred Date"
+            label=""
             name="date"
             type="date"
             inputProps= {{min: today}}

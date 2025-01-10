@@ -96,10 +96,11 @@
 /* Responsive styles */
 @media (max-width: 768px) {
   .header-container {
-    max-height: 15%;
     flex-direction: column;
-    text-align: center;
-    margin: 10px;
+    justify-content: center;
+    padding: 3ch;
+    max-height: 10%;
+    margin: 2px;
   }
 
   .contact-info {
