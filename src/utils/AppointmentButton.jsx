@@ -9,6 +9,7 @@ const AppointmentButton = ({ icon, description, onClick }) => {
       startIcon={<IconComponent iconName={icon} />}
       onClick={onClick}
       sx={{ display: "flex", alignItems: "center" }}
+      color="success"
     >
       {description}
     </Button>

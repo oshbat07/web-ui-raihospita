@@ -104,14 +104,14 @@ const EnquiryModal = ({ isOpen, onClose }) => {
           top: "50%",
           left: "50%",
           transform: "translate(-50%, -50%)",
-          width: 400,
+          width: '80vw',
           bgcolor: "background.paper",
           boxShadow: 24,
-          p: 4,
-          borderRadius: 5,
+          p: 3,
+          borderRadius: 2,
         }}
       >
-        <Typography variant="h6" component="h2" gutterBottom>
+        <Typography variant="h6" component="h2" gutterBottom sx={{display: 'flex', justifyContent: 'center'}}>
           Make an Appointment
         </Typography>
         <form onSubmit={handleSubmit}>
@@ -152,20 +152,21 @@ const EnquiryModal = ({ isOpen, onClose }) => {
               ))}
             </Select>
           </FormControl>
-
+          <FormControl fullWidth margin="normal">
+          <InputLabel id="date-label">Preferred Date</InputLabel>
           <TextField
             fullWidth
             margin="normal"
-            label=""
+            labelId="date-label"
             name="date"
             type="date"
-            inputProps= {{min: today}}
+            inputProps= {{min: today}} 
             value={formData.date}
             onChange={handleChange}
             error={!!errors.date}
             helperText={errors.date}
           />
-
+</FormControl>
           <FormControl fullWidth margin="normal">
             <InputLabel id="time-label">Preferred Time</InputLabel>
             <Select

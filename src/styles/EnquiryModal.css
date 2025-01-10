@@ -15,14 +15,14 @@
 /* Modal Container */
 .modal-container {
   /* background: linear-gradient(to bottom right, #deeeff, #91a1fa); */
-  background-color: white;
-  height: 100%;
-  border-radius: 10px;
+  background-color: #fafafb;
+  height: 80%;
+  border-radius: 0px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  width: 80%;
+  width: 60%;
   max-width: 400px;
   padding: 0px 0px 10px 0px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
