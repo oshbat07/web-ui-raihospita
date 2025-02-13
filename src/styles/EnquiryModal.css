@@ -1,8 +1,6 @@
-
-
 @media (max-height: 700px) {
   .modal-formField {
     margin: 12px 0;
-    height: 40px;
+    height: 30px;
   }
 }

@@ -17,7 +17,7 @@ const Hero = ({ isModalOpen, setModalOpen }) => {
     autoplay: true,
     speed: 4000,
     fade: true,
-    pauseOnHover: true
+    pauseOnHover: true,
   };
 
   return (
@@ -41,30 +41,35 @@ const Hero = ({ isModalOpen, setModalOpen }) => {
         </Slider>
       </div>
       <div className="hero-why">
-        <h1>Why Choose Rai Hospital & Research Center?</h1>
-        <p>
-          Rai Hospital and Research Center is a trusted name in healthcare,
-          offering comprehensive medical solutions under one roof. As a
-          state-of-the-art multispecialty hospital, we are equipped with 50+
-          beds and provide 25+ specialized services, ensuring that every patient
-          receives personalized and effective treatment. Our dedicated team of
-          expert doctors, skilled nurses, and compassionate staff work
-          tirelessly to deliver the highest standards of care.
-        </p>
-        <p>
-          <b>
+        <div className="why-description">
+          <h1>Why Choose Rai Hospital & Research Center?</h1>
+          <p>
+            Rai Hospital and Research Center is a trusted name in healthcare,
+            offering comprehensive medical solutions under one roof. As a
+            state-of-the-art multispecialty hospital, we are equipped with 50+
+            beds and provide 25+ specialized services, ensuring that every
+            patient receives personalized and effective treatment. Our dedicated
+            team of expert doctors, skilled nurses, and compassionate staff work
+            tirelessly to deliver the highest standards of care.
+          </p>
+          <h1>
             What sets us apart is our commitment to innovation and continuous
             improvement?
-          </b>{" "}
-          <br />
-          Our upcoming research center is poised to bring cutting-edge
-          advancements to patient care, bridging the gap between medical
-          research and practical healthcare solutions. With modern
-          infrastructure, advanced diagnostic tools, and a patient-centric
-          approach, Rai Hospital aims to be a beacon of hope and healing for the
-          community. Choose Rai Hospital for quality healthcare that combines
-          expertise, technology, and a vision for a healthier tomorrow.{" "}
-        </p>
+          </h1>
+          <p>
+            Our upcoming research center is poised to bring cutting-edge
+            advancements to patient care, bridging the gap between medical
+            research and practical healthcare solutions. With modern
+            infrastructure, advanced diagnostic tools, and a patient-centric
+            approach, Rai Hospital aims to be a beacon of hope and healing for
+            the community. Choose Rai Hospital for quality healthcare that
+            combines expertise, technology, and a vision for a healthier
+            tomorrow.
+          </p>
+        </div>
+        <div className="why-photo">
+          <img src={require("../assets/icu.jpg")} alt={"ICU"} />
+        </div>
       </div>
     </div>
   );

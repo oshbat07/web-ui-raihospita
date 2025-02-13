@@ -6,13 +6,20 @@
 }
 
 .hero-why {
-  width: auto;
-  height:  auto;
-  color: rgb(5, 0, 0);
-  background-color: #fafafb;
-  padding: 2rem;
+ display: grid;
+ gap: 5px 5px;
 }
-
+.why-description {
+  border: 2px solid red;
+  grid-column-start: 1;
+  grid-column-end: 6;
+}
+.why-photo {
+  border: 2px solid red;
+  padding: 2px;
+  grid-column-start: 6;
+  grid-column-end: 9;
+}
 @media (max-width: 768px) {
   .hero-slider {
     min-height: auto;
