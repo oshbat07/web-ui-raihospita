@@ -194,7 +194,7 @@ const handleClose = () => {
             name="date"
             type="date"
             inputProps={{ min: today }}
-            label="Preferred Date"
+            // label="Preferred Date"
             value={formData.date}
             onChange={handleChange}
             error={!!errors.date}
