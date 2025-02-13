@@ -102,8 +102,5 @@ export const homePagePhotos = [
     id: 2,
     src: require("../assets/hospital-building-image.jpg"),
   },
-  // {
-  //   id: 3,
-  //   src: require("../assets/landing2.png"),
-  // },
 ];
+

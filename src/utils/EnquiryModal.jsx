@@ -94,8 +94,8 @@ const EnquiryModal = ({ isOpen, onClose }) => {
     }
     return times;
   };
-
-useEffect(() => {
+const handleClose = () => {
+  onClose();
   setFormData({
     name: "",
     phone: "",
@@ -104,7 +104,19 @@ useEffect(() => {
     description: "",
     time: "",
   })
-},[isOpen])
+  setErrors({})
+}
+  useEffect(() => {
+    setFormData({
+      name: "",
+      phone: "",
+      date: "",
+      ailment: "",
+      description: "",
+      time: "",
+    });
+    setErrors({})
+  }, [isOpen]);
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -135,6 +147,7 @@ useEffect(() => {
         <form onSubmit={handleSubmit}>
           <TextField
             className="modal-formField"
+            variant="standard"
             fullWidth
             margin="normal"
             label="Name"
@@ -147,6 +160,7 @@ useEffect(() => {
           <TextField
             fullWidth
             className="modal-formField"
+            variant="standard"
             margin="normal"
             label="Phone"
             name="phone"
@@ -159,6 +173,7 @@ useEffect(() => {
             <InputLabel id="ailment-label">Ailment Type</InputLabel>
             <Select
               labelId="ailment-label"
+              variant="standard"
               className="modal-formField"
               name="ailment"
               value={formData.ailment}
@@ -171,25 +186,27 @@ useEffect(() => {
               ))}
             </Select>
           </FormControl>
-            <TextField
-              fullWidth
-              className="modal-formField"
-              margin="normal"
-              labelId="date-label"
-              name="date"
-              type="date"
-              inputProps={{ min: today }}
-              value={formData.date}
-              onChange={handleChange}
-              error={!!errors.date}
-              helperText={errors.date}
-            />
+          <TextField
+            fullWidth
+            className="modal-formField"
+            variant="standard"
+            margin="normal"
+            name="date"
+            type="date"
+            inputProps={{ min: today }}
+            // label="Preferred Date"
+            value={formData.date}
+            onChange={handleChange}
+            error={!!errors.date}
+            helperText={errors.date}
+          />
           <FormControl fullWidth margin="normal">
             <InputLabel id="time-label">Preferred Time</InputLabel>
             <Select
               labelId="time-label"
               className="modal-formField"
               name="time"
+              variant="standard"
               value={formData.time}
               onChange={handleChange}
             >
@@ -208,6 +225,7 @@ useEffect(() => {
             name="description"
             rows={1}
             value={formData.description}
+            variant="standard"
             onChange={handleChange}
           />
           <Button
@@ -218,6 +236,16 @@ useEffect(() => {
             sx={{ mt: 2 }}
           >
             Submit
+          </Button>
+          <Button
+            fullWidth
+            variant="contained"
+            color="error"
+            type="close"
+            sx={{ mt: 2 }}
+            onClick={handleClose}
+          >
+            Close
           </Button>
         </form>
       </Box>

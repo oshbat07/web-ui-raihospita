@@ -1,21 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/Photo.css";
 import { photosData } from "../data/photosData";
 import PhotoCard from "../utils/PhotoCard";
-import ImageModal from "../utils/ImageModal";
 
 export default function Photos() {
-  const [selectedImage, setSelectedImage] = useState(null);
-  // const [isOpen, setIsOpen] = useState(false);
-  // const handleCardClick = (image) => {
-  //   setIsOpen(true);
-  //   setSelectedImage(image);
-  // };
-
-  const closeModal = () => {
-    setSelectedImage(null);
-  };
-
   return (
     <>
       <div className="photo">
@@ -35,18 +23,10 @@ export default function Photos() {
                 width={item.width}
                 height={item.height}
                 caption={item.caption}
-                // onClick={() => handleCardClick(item.src)}
               />
             );
           })}
         </div>
-        {selectedImage && (
-          <ImageModal
-            image={selectedImage}
-            // isOpen={isOpen}
-            onClose={closeModal}
-          />
-        )}
       </div>
     </>
   );
